@@ -32,23 +32,18 @@
 // V7   ON/OFF        input [0,1]
 
 /**************** DEFINES **********************************/
-#define BLYNK_PRINT Serial  // Set serial output for debug prints
-//#define BLYNK_DEBUG       // Uncomment this to see detailed prints
-
 #include "Particle.h"
-void setColor(void);
-void setup();
-void loop();
-#line 39 "/Users/drewbell/sw_projects/ProjectWindow_Sun/src/ProjectWindow_Sun.ino"
 #include "blynk.h"
 #include "neopixel.h"
 
-
 // IMPORTANT: Set pixel COUNT, PIN and TYPE
+void setColor(void);
+void setup();
+void loop();
+#line 40 "/Users/drewbell/sw_projects/ProjectWindow_Sun/src/ProjectWindow_Sun.ino"
 #define PIXEL_PIN D2
 #define PIXEL_COUNT 60
 #define PIXEL_TYPE WS2812B
-
 Adafruit_NeoPixel strip(PIXEL_COUNT, PIXEL_PIN, PIXEL_TYPE);
 
 enum mode { OFF_MODE = 1, 
@@ -147,7 +142,7 @@ void setColor(void){
             newColor.green = color.green;
             newColor.blue = color.blue;
             break;
-        case WINDOW_MODE:
+        case WINDOW_MODE:       //TODO(drew) pipe in windowColor data from the other photo
             newColor.red = windowColor.red;
             newColor.green = windowColor.green;
             newColor.blue = windowColor.blue;
