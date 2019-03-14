@@ -201,6 +201,6 @@ void loop() {
     Blynk.run();
     if(blynkUpdateReady){
         setColor();  
-        Log.info("Updating color with latest blynk data");
+        Log.info("Finishing setup setup."); 
     }
 }
