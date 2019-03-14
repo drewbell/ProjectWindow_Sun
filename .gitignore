@@ -1,4 +1,1 @@
-/target*
-*.bin
-*.elf
-*.hex
+target/
